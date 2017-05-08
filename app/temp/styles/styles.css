@@ -1070,3 +1070,43 @@ Instead edit gulp/templates/sprite */
     font-weight: 200;
   }
 }
+
+.site-header{
+  position: absolute;
+  z-index:2;
+  background-color: rgba(47,85,114, .3);
+  width: 100%;
+}
+
+.site-header__btn-container{
+  float:right;
+}
+
+@media (min-width: 800px) {}
+
+.primary-nav--pull-right{
+  float:right;
+}
+
+.primary-nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+.primary-nav ul::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.primary-nav li{
+  list-style: none;
+  float: left;
+  padding-right:20px;
+}
+
+.primary-nav a{
+  color: #FFF;
+  font-weight:300;
+  text-decoration:none;
+}
