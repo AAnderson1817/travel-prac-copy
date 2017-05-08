@@ -1067,5 +1067,6 @@ Instead edit gulp/templates/sprite */
     display: inline;
     margin-bottom: 0;
     margin-right: 1.5rem;
+    font-weight: 200;
   }
 }
