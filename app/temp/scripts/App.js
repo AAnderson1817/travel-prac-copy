@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -54,9 +54,9 @@
 
 	var mobileMenu = new _MobileMenu2.default();
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 
@@ -94,6 +94,7 @@
 	    value: function toggleTheMenu() {
 	      this.menuContent.toggleClass("site-header__menu-content--is-visible");
 	      this.siteHeader.toggleClass("site-header--is-expanded");
+	      this.menuIcon.toggleClass("site-header__menu-icon--close-x");
 	    }
 	  }]);
 
@@ -102,9 +103,9 @@
 
 	exports.default = MobileMenu;
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	 * jQuery JavaScript Library v2.2.4
@@ -9922,5 +9923,5 @@
 	}));
 
 
-/***/ }
+/***/ })
 /******/ ]);
