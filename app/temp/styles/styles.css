@@ -2,15 +2,13 @@
 
 /**
  * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 
 html {
   font-family: sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -258,7 +256,6 @@ hr {
 
 button,
 input,
-optgroup,
 select,
 textarea {
   font: inherit; /* 1 */
@@ -450,7 +447,7 @@ a {
 }
 
 .large-hero__text-content {
-  padding-top:110px;
+  padding-top: 88px;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -805,6 +802,7 @@ a {
 
   .row--equal-height-at-medium {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -813,6 +811,7 @@ a {
 .row--equal-height-at-medium > div {
   float: none;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -821,6 +820,7 @@ a {
 
   .row--equal-height-at-large {
     display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -829,6 +829,7 @@ a {
 .row--equal-height-at-large > div {
   float: none;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -1057,16 +1058,17 @@ Instead edit gulp/templates/sprite */
     background-position: 36.69752421959096% 45.792307692307695%;
   }
 
-.site-footer{
+.site-footer {
   background-color: #2f5572;
-  color:#FFF;
+  color: #FFF;
   padding: .5rem 0;
-  text-align:center;
+  text-align: center;
 }
 
-.site-footer__text{
-  display:block;
+.site-footer__text {
+  display: block;
   margin-bottom: 1rem;
+  font-weight: 200;
 }
 
 @media (min-width: 800px) {
@@ -1074,38 +1076,45 @@ Instead edit gulp/templates/sprite */
   .site-footer__text {
     display: inline;
     margin-bottom: 0;
-    margin-right: 1.5rem;
-    font-weight: 200;
+    margin-right: 1.4rem;
   }
 }
 
-.site-header{
-  position: absolute;
-  z-index:2;
-  background-color: rgba(47,85,114, .3);
-  width: 100%;
+.site-header {
   padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
 }
 
-.site-header__btn-container{
-  float:right;
+.site-header--is-expanded {
+  background-color: rgba(47,85,114, .55);
+}
+
+@media (min-width: 800px) {
+
+  .site-header {
+    background-color: rgba(47,85,114, .3);
+  }
 }
 
 @media (min-width: 800px) {
 
   .site-header__btn-container {
-    background-color: rgba(47,85,114, .3);
+    float: right;
   }
 }
 
-.site-header__logo{
-  position:absolute;
+.site-header__logo {
+  position: absolute;
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-50%) scale(.8);
           transform: translateX(-50%) scale(.8);
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
   background-color: #2f5572;
   padding: 25px 36px;
 }
@@ -1119,17 +1128,18 @@ Instead edit gulp/templates/sprite */
   }
 }
 
-.site-header__logo__graphic{
-  text-indent:-9999px;
+.site-header__logo__graphic {
+  text-indent: -9999px;
 }
 
-.site-header__menu-icon{
-  width:20px;
-  height:20px;
+.site-header__menu-icon {
+  width: 20px;
+  height: 20px;
   background-color: #FFF;
-  top:10px;
-  right:10px;
-  position:absolute;
+  position: absolute;
+  z-index: 10;
+  top: 10px;
+  right: 10px;
 }
 
 @media (min-width: 800px) {
@@ -1139,22 +1149,55 @@ Instead edit gulp/templates/sprite */
   }
 }
 
-.site-header__menu-content{
-  display:none;
+.site-header__menu-content {
+  opacity: 0;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  position: relative;
+  z-index: -10;
+  padding-top: 90px;
+  text-align: center;
 }
 
 @media (min-width: 800px) {
 
   .site-header__menu-content {
-    display: block;
+    opacity: 1;
+    z-index: 1;
+    padding-top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-.primary-nav--pull-right{
-  float:right;
+.site-header__menu-content--is-visible {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
-.primary-nav ul{
+.primary-nav {
+  padding-top: 10px;
+}
+
+@media (min-width: 800px) {
+
+  .primary-nav {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .primary-nav--pull-right {
+    float: right;
+  }
+}
+
+.primary-nav ul {
   margin: 0;
   padding: 0;
 }
@@ -1165,16 +1208,47 @@ Instead edit gulp/templates/sprite */
   display: table;
 }
 
-.primary-nav li{
+.primary-nav li {
   list-style: none;
-  float: left;
-  padding-right:20px;
+  display: inline-block;
+  padding-right: 7px;
 }
 
-.primary-nav a{
+@media (min-width: 800px) {
+
+  .primary-nav li {
+    padding-right: 20px;
+    float: left;
+    display: block;
+  }
+}
+
+.primary-nav li:last-child {
+  padding-right: 0;
+}
+
+@media (min-width: 800px) {
+
+  .primary-nav li:last-child {
+    padding-right: 20px;
+  }
+}
+
+.primary-nav a {
   color: #FFF;
-  font-weight:300;
-  text-decoration:none;
-  display:block;
-  padding: 12px 0;
+  font-weight: 300;
+  text-decoration: none;
+  display: block;
+  padding: 5px 8px;
+  font-size: .8rem;
+  background-color: rgba(47,85,114, .5);
+}
+
+@media (min-width: 800px) {
+
+  .primary-nav a {
+    font-size: 1rem;
+    padding: 12px 0;
+    background-color: transparent;
+  }
 }
