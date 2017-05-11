@@ -7,26 +7,25 @@ class RevealOnScroll {
     this.offsetPercentage = offset;
     this.hideInitially();
     this.createWaypoints();
-
   }
 
-  hideInitially(){
+  hideInitially() {
     this.itemsToReveal.addClass("reveal-item");
   }
 
-  createWaypoints(){
+  createWaypoints() {
     var that = this;
-    this.itemsToReveal.each(function(){
+    this.itemsToReveal.each(function() {
       var currentItem = this;
       new Waypoint({
         element: currentItem,
-        handler: function(){
+        handler: function() {
           $(currentItem).addClass("reveal-item--is-visible");
         },
-        offset: that.offsetPercentage;
+        offset: that.offsetPercentage
       });
     });
   }
 }
 
-export default RevealOnScroll
+export default RevealOnScroll;
