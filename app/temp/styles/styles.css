@@ -878,6 +878,7 @@ a {
 
 .section-title--less-margin {
   margin-bottom: 1.3rem;
+  margin-top: 0;
 }
 
 .section-title__icon {
@@ -1353,6 +1354,26 @@ Instead edit gulp/templates/sprite */
   bottom: 0;
   left: 0;
   right: 0;
+  opacity:0;
+  visibility:hidden;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  transition: all .3s ease-out;
+}
+
+.modal--is-visible{
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.modal__inner{
+  position:absolute;
+  width:100%;
+  top:50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .modal__description{
@@ -1362,6 +1383,23 @@ Instead edit gulp/templates/sprite */
   line-height: 1.65;
 }
 
+.modal__close{
+  position: absolute;
+  top:15px;
+  right:15px;
+  font-size: 2rem;
+  -webkit-transform: scaleX(1.2);
+          transform: scaleX(1.2);
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  color: #2f5572;
+  cursor: pointer;
+}
+
+.modal__close:hover{
+  color: #d59541;
+}
+
 .social-icons{
   text-align:center;
 }
@@ -1369,10 +1407,18 @@ Instead edit gulp/templates/sprite */
 .social-icons__icon{
   display: inline-block;
   background-color: #d59541;
-  margin: 0 5px;
-  width: 72px;
+  margin: 0 5px 5px 5px;
+  width: 33%;
   height: 72px;
   position: relative;
+}
+
+@media (min-width: 530px) {
+
+  .social-icons__icon {
+    width: 72px;
+    margin: 0 5px;
+  }
 }
 
 .social-icons .icon {
