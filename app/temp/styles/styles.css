@@ -642,7 +642,7 @@ a {
 @media (min-width: 1010px) {
 
   .page-section--testimonials.lazyloaded {
-    background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+    background: url('../../assets/images/testimonials-bg.jpg') top center no-repeat;
     background-size: cover;
   }
 }
@@ -803,7 +803,7 @@ a {
   }
 }
 
-/* Begin Equal Height Rules. .flexbox is a node module. */
+/* Begin Equal Height Rules */
 
 @media (min-width: 800px) {
 
@@ -991,11 +991,11 @@ a {
 Instead edit gulp/templates/sprite */
 
 .icon {
-      background-image: url('/assets/images/sprites/sprite-8eb89099.svg');
+      background-image: url('../../assets/images/sprites/sprite-8eb89099.svg');
     }
 
 .no-svg .icon {
-      background-image: url('/assets/images/sprites/sprite-8eb89099.png');
+      background-image: url('../../assets/images/sprites/sprite-8eb89099.png');
     }
 
 .icon--clear-view-escapes {
@@ -1146,7 +1146,7 @@ Instead edit gulp/templates/sprite */
             transform: translateX(0);
   }
 
-  .site-header--dark .site-header__logo {/* The scale is adjusted slightly (from .57 to .56) to accomodate for the padding values we added in gulp/sprites which eliminated our icon artifacts */
+  .site-header--dark .site-header__logo {
     -webkit-transform: scale(.56);
             transform: scale(.56);
   }
