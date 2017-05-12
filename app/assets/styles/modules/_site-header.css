@@ -8,7 +8,7 @@
   &--is-expanded {
     background-color: rgba($mainBlue, .55);
   }
-  
+
   @mixin atMedium {
     position: fixed;
     background-color: rgba($mainBlue, .3);
@@ -39,6 +39,8 @@
       transform: translateX(0);
 
       .site-header--dark & {
+
+        /* The scale is adjusted slightly (from .57 to .56) to accomodate for the padding values we added in gulp/sprites which eliminated our icon artifacts */
         transform: scale(.56);
       }
     }

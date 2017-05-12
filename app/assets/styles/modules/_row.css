@@ -95,8 +95,8 @@
     }
 
   }
-  
-  /* Begin Equal Height Rules */
+
+  /* Begin Equal Height Rules. .flexbox is a node module. */
   .flexbox &--equal-height-at-medium {
     @mixin atMedium {
       display: flex;
